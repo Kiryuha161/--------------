@@ -10,7 +10,7 @@ import './Styles/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Messages from './Components/Messages';
 
-function App() {
+function App(props) {
 
   return (
     <BrowserRouter>
@@ -25,8 +25,8 @@ function App() {
               <div className="row">
                 <div className="col-12">
                   <Routes>
-                    <Route path="/profile/*" element={<Profile/>} />
-                    <Route path="/messages/*" element={<Messages/>}/>
+                    <Route path="/profile/*" element={<Profile posts={props.state.profile.posts}/>} />
+                    <Route path="/messages/*" element={<Messages friendListData={props.state.messages.friendListData} messagesData={props.state.messages.messagesData}/>}/>
                     </Routes>
                 </div>
               </div>

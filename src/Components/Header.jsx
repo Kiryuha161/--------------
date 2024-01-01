@@ -13,6 +13,7 @@ const Header = () => {
                         <li className="nav-item mobile-show"><NavLink className="nav-link" to="/music">Музыка</NavLink></li>
                         <li className="nav-item mobile-show"><NavLink className="nav-link" to="/video">Видео</NavLink></li>
                         <li className="nav-item mobile-show"><NavLink className="nav-link" to="/settings">Настройки</NavLink></li>
+                        <li className="nav-item mobile-show"><NavLink className="nav-link" to="/my-friends">Друзья</NavLink></li>
                     </ul>
             </div>
             

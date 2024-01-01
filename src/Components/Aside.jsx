@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import MyFriend from './MyFriend';
 
 const Aside = () => {
   return (
@@ -16,7 +17,7 @@ const Aside = () => {
             <li className='list-group-item'><NavLink id="settings-ref" to="/settings">Настройки</NavLink></li>
           </ul>
         </nav>
-     
+        <MyFriend/>
     </aside>
   );
 }
