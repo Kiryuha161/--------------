@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <header className="navbar navbar-expand-lg navbar-light ">
             <div className="container">
-                <a className='navbar-brand' href="#S"><img src="https://images.freeimg.net/rsynced_images/logo-3266214_1280.png" alt="лого" /></a>
+                <a className='navbar-brand' href="/"><img src="https://images.freeimg.net/rsynced_images/logo-3266214_1280.png" alt="лого" /></a>
                     <ul className=" navbar-nav d-flex flex-row">
                         <li className="nav-item mobile-show"><NavLink className="nav-link" to="/profile">Профиль</NavLink></li>
                         <li className="nav-item mobile-show"><NavLink className="nav-link" to="/messages">Сообщения</NavLink></li>

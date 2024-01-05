@@ -119,7 +119,18 @@ a.active {
 }
 
 .my-friend-list-item img {
-    width: 75%;
+    width: 50px;
+    height: 48px;
     border-radius: 50px;
+}
+
+.my-friend-list-item p {
+    font-size: 10px;
+}
+
+.my-friend-page img {
+    width: 5%;
+    height: 50px;
+    margin-right: 25px;
 }
 

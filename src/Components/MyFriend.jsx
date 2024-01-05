@@ -1,13 +1,16 @@
-const MyFriend = () => {
+import { NavLink } from "react-router-dom";
+
+const MyFriend = (props) => {
     return (
         <div className="my-friend">
-            <h3><a href="#S">Друзья</a></h3>
+            <h3><NavLink to="/my-friends">Друзья ({props.myFriendList.length})</NavLink></h3>
             <div className="my-friend-list">
-                <div className="my-friend-list-item">
-                    <img src="https://shapka-youtube.ru/wp-content/uploads/2020/08/man-silhouette.jpg" alt="аватар" />
-                    <p>Кирилл</p>
-                </div>
+            {props.myFriendList.map(friends => <div className="my-friend-list-item">
+                     <img src={friends.avatar} alt="аватар" />
+                    <p>{friends.name}</p> 
+                </div>)}
             </div>
+
         </div>
     )
 }
