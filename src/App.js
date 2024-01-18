@@ -27,7 +27,7 @@ function App(props) {
               <div className="row">
                 <div className="col-12">
                   <Routes>
-                    <Route path="/profile/*" element={<Profile posts={props.store.getState().profile.posts} addPost={props.addPost}/>} />
+                    <Route path="/profile/*" element={<Profile posts={props.store.getState().profile.posts} dispatch={props.dispatch}/>} />
                     <Route path="/messages/*" element={<Messages friendListData={props.store.getState().messages.friendListData} messagesData={props.store.getState().messages.messagesData}/>}/>
                     <Route path="/my-friends" element={<MyFriendPage state={props.store.getState()}/>}/>
                     </Routes>

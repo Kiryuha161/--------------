@@ -12,7 +12,7 @@ export let rerenderEntireTree = () => {
   /* console.log(JSON.stringify(store)); */
   root.render(
     <React.StrictMode>
-      <App store={store} addPost={store.addPost.bind(store)} />
+      <App store={store} dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>
   );
 }

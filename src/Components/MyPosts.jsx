@@ -4,7 +4,10 @@ const MyPosts = (props) => {
     let newRef = React.createRef();
 
     let addPost =() => {
-       props.addPost(newRef.current.value);
+       //props.addPost(newRef.current.value);
+       let text = newRef.current.value;
+       let action = { type: 'ADD-POST', message: text }
+       props.dispatch(action);
        newRef.current.value = '';
     }
 

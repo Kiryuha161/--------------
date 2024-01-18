@@ -36,7 +36,7 @@ let store = {
             ]
         }
     },
-    /* postId: 3, */
+    postId: 3, 
     _callSubscriber() {
         console.log("Перерисовка произошла");
     },
@@ -46,18 +46,20 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    addPost(postMessage) {
-        let newPost = {
-            post: postMessage,
-            id: 3,
-            //id: this.postId,
-            likeCount: 0,
-            commentCount: 0
-        }
-        
-        //this.postId++;
-        this._state.profile.posts.push(newPost);
-        this._callSubscriber();
+    dispatch(action) { //добавить, когда функциональность начнёт расширяться
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                post: action.message,
+                //id: 3,
+                id: this.postId,
+                likeCount: 0,
+                commentCount: 0
+            }
+            
+            this.postId++;
+            this._state.profile.posts.push(newPost);
+            this._callSubscriber();
+        } 
     }
 }
 

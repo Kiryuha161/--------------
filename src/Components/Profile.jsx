@@ -12,7 +12,7 @@ const Profile = (props) => {
             <ProfileInfo date="25.03.1993" city="Ростов-на-Дону" education="Высшее" cite="vk.com"/>
             <div className="row mb-3">
                 <div className="col-12">
-                    <MyPosts addPost={props.addPost}/>
+                    <MyPosts dispatch={props.dispatch}/>
                 </div>
             </div>
             <div className="row mb-3">
