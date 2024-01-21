@@ -1,13 +1,13 @@
 import React from 'react';
+import { addPostActionCreator } from '../MyRedux/state';
 
 const MyPosts = (props) => {
     let newRef = React.createRef();
 
     let addPost =() => {
-       //props.addPost(newRef.current.value);
        let text = newRef.current.value;
-       let action = { type: 'ADD-POST', message: text }
-       props.dispatch(action);
+       
+       props.dispatch(addPostActionCreator(text));
        newRef.current.value = '';
     }
 
@@ -17,7 +17,7 @@ const MyPosts = (props) => {
             <form>
                 <textarea ref={ newRef } className="form-text" placeholder="Введите текст"></textarea>
             </form>
-                <input className="btn btn-primary" type="submit" value="Отправить" onClick={addPost}/>
+                <input className="btn btn-primary" type="submit" value="Отправить" onClick={addPost}/> 
         </div>
     );
 };

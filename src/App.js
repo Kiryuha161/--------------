@@ -27,8 +27,10 @@ function App(props) {
               <div className="row">
                 <div className="col-12">
                   <Routes>
-                    <Route path="/profile/*" element={<Profile posts={props.store.getState().profile.posts} dispatch={props.dispatch}/>} />
-                    <Route path="/messages/*" element={<Messages friendListData={props.store.getState().messages.friendListData} messagesData={props.store.getState().messages.messagesData}/>}/>
+                    <Route path="/profile/*" element={<Profile myInfo={props.store.getState().myInfo} 
+                    posts={props.store.getState().profile.posts} dispatch={props.dispatch}/>} />
+                    <Route path="/messages/*" element={<Messages myFriendList={props.store.getState().messages.myFriendList} 
+                    messagesData={props.store.getState().messages.messagesData} dispatch={props.dispatch}/>}/>
                     <Route path="/my-friends" element={<MyFriendPage state={props.store.getState()}/>}/>
                     </Routes>
                 </div>

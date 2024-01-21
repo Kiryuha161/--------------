@@ -58,6 +58,7 @@ header img {
 
 .avatar {
     width: 100%;
+    height: 100%;
 }
 
 .my-posts textarea {
@@ -67,6 +68,8 @@ header img {
 
 .min-avatar {
     width: 50px;
+    height: 50px;
+    border-radius: 25px;
 }
 
 .like {
@@ -80,8 +83,28 @@ header img {
 }
 
 .friends-list-item,
-.messages-area-item {
+.messages-area-item-me {
     background-color: rgb(202, 218, 228);
+}
+
+.friends-list a {
+    height: 60px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.friends-list-item {
+    height: 100%;
+}
+
+
+.friends-list-item:hover {
+    background-color: rgb(167, 196, 214);
+    cursor: pointer;
+}
+
+.messages-area-item-not-me {
+    background-color: rgb(172, 201, 219);
 }
 
 .send-message-form {

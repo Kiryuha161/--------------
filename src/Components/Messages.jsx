@@ -8,12 +8,12 @@ const Messages = (props) => {
         <div className="container">
             <h1 className="text-center">Диалоги</h1>
             <div className="row">
-                <FriendList friendListData={props.friendListData}/>
+                <FriendList myFriendList={props.myFriendList}/>
                 <MessagesArea messagesData={props.messagesData}/>
             </div>
             <div className='row mt-5 pt-5 send-area'>
                 <div className='col-4'></div>
-                <SendArea />
+                <SendArea dispatch={props.dispatch}/>
             </div>
         </div>
     )
