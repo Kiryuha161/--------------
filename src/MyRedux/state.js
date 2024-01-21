@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const SEND_MESSAGE = 'ADD-MESSAGE';
+const LIKE_IT = 'LIKE-IT'
 
 let store = {
     _state: {
@@ -14,8 +15,8 @@ let store = {
         },
         profile: {
             posts: [
-                { post: "Салют, народ. Как дела?", id: 1, likeCount: 6, commentCount: 0 },
-                { post: "Ну что, погнали, нах?", id: 2, likeCount: 24, commentCount: 3 }
+                { post: "Салют, народ. Как дела?", id: 1, likeCount: 6, commentCount: 0, hadLike: false },
+                { post: "Ну что, погнали, нах?", id: 2, likeCount: 24, commentCount: 3, hadLike: false }
             ]
         },
         messages: {
@@ -101,6 +102,23 @@ let store = {
             this.messageId++;
             this._state.messages.messagesData.push(newMessage);
             this._callSubscriber();
+        } else if (action.type === LIKE_IT) {
+            const postId = action.id;
+            const posts = this._state.profile.posts;
+
+            const selectedPost = posts.find(x => x.id === postId);
+
+            if (selectedPost) {
+                if (selectedPost.hadLike) {
+                    selectedPost.likeCount--;
+                } else {
+                    selectedPost.likeCount++;
+                }
+            }
+
+            selectedPost.hadLike = !selectedPost.hadLike;
+
+            this._callSubscriber();
         }
     }
 }
@@ -116,6 +134,13 @@ export const sendMessageActionCreator = (text) => {
     return {
         type: SEND_MESSAGE,
         text: text
+    }
+}
+
+export const likeItActionCreator = (id) => {
+    return {
+        type: LIKE_IT,
+        id: id
     }
 }
 

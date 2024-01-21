@@ -34,7 +34,7 @@ const Profile = (props) => {
             </div>
             <div className="row mb-3">
                 <div className="col-12">
-                    <Post posts={props.posts} />
+                    <Post posts={props.posts} dispatch={props.dispatch}/>
                 </div>
             </div>
         </main>

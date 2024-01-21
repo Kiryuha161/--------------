@@ -7,7 +7,7 @@ const SendArea = (props) => {
     
     let sendMessage =() => {
         let post = messageRef.current.value;
-        
+    
         props.dispatch(sendMessageActionCreator(post));
         messageRef.current.value = '';
     }
@@ -22,4 +22,4 @@ const SendArea = (props) => {
     )
 }
 
-export default SendArea;
+export default SendArea; 
