@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator } from '../MyRedux/state';
+import { addPostActionCreator } from '../MyRedux/profileReducer';
 
 const MyPosts = (props) => {
     let newRef = React.createRef();

@@ -1,3 +1,6 @@
+import { messageReducer } from "./messagesReducer";
+import { profileReducer } from "./profileReducer";
+
 const ADD_POST = 'ADD-POST';
 const SEND_MESSAGE = 'ADD-MESSAGE';
 const LIKE_IT = 'LIKE-IT'
@@ -65,8 +68,6 @@ let store = {
             
         }
     },
-    postId: 3, 
-    messageId: 3,
     _callSubscriber() {
         console.log("Перерисовка произошла");
     },
@@ -76,76 +77,19 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    dispatch(action) { //добавить, когда функциональность начнёт расширяться
-        if (action.type === ADD_POST) {
-            let newPost = {
-                post: action.post,
-                //id: 3,
-                id: this.postId,
-                likeCount: 0,
-                commentCount: 0
-            }
-            
-            this.postId++;
-            this._state.profile.posts.push(newPost);
-            this._callSubscriber();
-        } else if (action.type === SEND_MESSAGE) {
-            let newMessage = {
-                text: action.text,
-                id: this.messageId,
-                date: Date.now,
-                sender: "Кирилл",
-                image: "https://android-obzor.com/wp-content/uploads/2022/03/28e4ac42f547e6ac0f50f7cfa916ca93.jpg",
-                isMe: true
-            }
+    dispatch(action) { 
+        this._state.profile = profileReducer(this._state.profile, action);
+        this._state.messages = messageReducer(this._state.messages, action);
 
-            this.messageId++;
-            this._state.messages.messagesData.push(newMessage);
-            this._callSubscriber();
-        } else if (action.type === LIKE_IT) {
-            const postId = action.id;
-            const posts = this._state.profile.posts;
-
-            const selectedPost = posts.find(x => x.id === postId);
-
-            if (selectedPost) {
-                if (selectedPost.hadLike) {
-                    selectedPost.likeCount--;
-                } else {
-                    selectedPost.likeCount++;
-                }
-            }
-
-            selectedPost.hadLike = !selectedPost.hadLike;
-
-            this._callSubscriber();
-        }
+        this._callSubscriber();
     }
-}
-
-export const addPostActionCreator = (post) => {
-    return {
-        type: ADD_POST, 
-        post: post
-    }
-}
-
-export const sendMessageActionCreator = (text) => {
-    return {
-        type: SEND_MESSAGE,
-        text: text
-    }
-}
-
-export const likeItActionCreator = (id) => {
-    return {
-        type: LIKE_IT,
-        id: id
-    }
+       
 }
 
 window.store = store;
 export default store;
+
+
 
 
 

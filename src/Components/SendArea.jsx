@@ -1,5 +1,5 @@
 import React from "react";
-import { sendMessageActionCreator } from "../MyRedux/state";
+import { sendMessageActionCreator } from "../MyRedux/messagesReducer";
 
 
 const SendArea = (props) => {

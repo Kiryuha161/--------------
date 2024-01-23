@@ -1,5 +1,5 @@
 import React from 'react';
-import { likeItActionCreator } from '../MyRedux/state';
+import { likeItActionCreator } from '../MyRedux/profileReducer';
 
 const Post = (props) => {
     return (
