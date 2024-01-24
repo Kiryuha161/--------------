@@ -15,7 +15,6 @@ export const profileReducer = (state, action) => {
         postId++;
         state.posts.push(newPost);
     } else if (action.type === LIKE_IT) {
-        //let postIdLike = action.id;
         let posts = state.posts;
 
         let selectedPost = posts.find(x => x.id === action.id);

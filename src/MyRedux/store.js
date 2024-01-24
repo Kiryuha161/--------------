@@ -1,10 +1,6 @@
 import { messageReducer } from "./messagesReducer";
 import { profileReducer } from "./profileReducer";
 
-const ADD_POST = 'ADD-POST';
-const SEND_MESSAGE = 'ADD-MESSAGE';
-const LIKE_IT = 'LIKE-IT'
-
 let store = {
     _state: {
         myInfo: {
@@ -38,7 +34,7 @@ let store = {
                 { name: "Роман", surname: "Бобрешов", avatar: "https://tipik.ru/wp-content/uploads/2019/05/Волк-картинки-скачать-на-телефон-крутые-заставки-6.jpg", id: 7 },
                 { name: "Андрей", surname: "Алексеев", avatar: "https://sneg.top/uploads/posts/2023-06/1687931407_sneg-top-p-prikolnie-avatarki-dlya-malchikov-vkontakt-5.jpg", id: 8 },
                 { name: "Кирилл", surname: "Парамонов", avatar: "https://android-obzor.com/wp-content/uploads/2022/03/28e4ac42f547e6ac0f50f7cfa916ca93.jpg", id: 9 }
-            ]//Под вопросом, что стоит использовать friendListData или myFriendList
+            ]
         },
         sidebar: {
             myFriendList: [
