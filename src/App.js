@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Messages from './Components/Messages';
 
 function App(props) {
-  debugger
   return (
     <BrowserRouter>
       <div className="container">
