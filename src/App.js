@@ -12,10 +12,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Messages from './Components/Messages';
 
 function App(props) {
-
+  debugger
   return (
     <BrowserRouter>
-    {/* {console.log(JSON.stringify(props))} */}
       <div className="container">
         <Header />
         <div className="container-fluid">
@@ -27,7 +26,7 @@ function App(props) {
               <div className="row">
                 <div className="col-12">
                   <Routes>
-                    <Route path="/profile/*" element={<Profile myInfo={props.store.getState().myInfo} 
+                    <Route path="/profile/*" element={<Profile myInfo={props.store.getState().profile.myInfo} 
                     posts={props.store.getState().profile.posts} dispatch={props.dispatch}/>} />
                     <Route path="/messages/*" element={<Messages myFriendList={props.store.getState().messages.myFriendList} 
                     messagesData={props.store.getState().messages.messagesData} dispatch={props.dispatch}/>}/>

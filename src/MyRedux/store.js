@@ -1,5 +1,7 @@
 import { messageReducer } from "./messagesReducer";
+import { myFriendPageReducer } from "./myFriendPageReducer";
 import { profileReducer } from "./profileReducer";
+import { sidebarReducer} from "./sidebarReducer";
 
 let store = {
     _state: {
@@ -76,6 +78,8 @@ let store = {
     dispatch(action) { 
         this._state.profile = profileReducer(this._state.profile, action);
         this._state.messages = messageReducer(this._state.messages, action);
+        this._state.myFriendPage = myFriendPageReducer(this._state.myFriendPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
         this._callSubscriber();
     }
