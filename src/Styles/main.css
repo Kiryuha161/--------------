@@ -157,3 +157,19 @@ a.active {
     margin-right: 25px;
 }
 
+.my-friend-page a {
+    text-decoration: none;
+    display: block;
+    height: auto;
+}
+
+.my-friend-page .friend-page-list {
+    background-color: rgb(172, 201, 219);;
+}
+
+.my-friend-page .friend-page-list:hover {
+    background-color: rgb(167, 196, 214) !important;
+    cursor: pointer;
+}
+
+

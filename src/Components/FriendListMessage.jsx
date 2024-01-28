@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const FriendList = (props) => {
+const FriendListMessage = (props) => {
     let path = "/messages"; // Общий путь для всех друзей
     return (
         <div className="col-4 friends-list mb-1">
@@ -15,4 +15,4 @@ const FriendList = (props) => {
     );
 }
 
-export default FriendList;
+export default FriendListMessage;

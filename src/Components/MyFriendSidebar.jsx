@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const MyFriend = (props) => {
+const MyFriendSidebar = (props) => {
     return (
         <div className="my-friend">
             <h3><NavLink to="/my-friends">Друзья ({props.myFriendList.length})</NavLink></h3>
@@ -15,4 +15,4 @@ const MyFriend = (props) => {
     )
 }
 
-export default MyFriend;
+export default MyFriendSidebar;
